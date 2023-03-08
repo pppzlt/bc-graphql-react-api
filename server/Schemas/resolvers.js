@@ -26,7 +26,7 @@ const resolvers = {
         throw new AuthenticationError("Incorrect credentials");
       }
 
-      const token = singToken(user);
+      const token = signToken(user);
 
       return { token, user };
     },

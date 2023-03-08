@@ -67,7 +67,8 @@ const SearchBooks = () => {
   const handleSaveBook = async (bookId) => {
     // find the book in `searchedBooks` state by the matching id
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
-
+    console.log(bookToSave)
+    console.log(Auth.getProfile().data._id);
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -77,10 +78,11 @@ const SearchBooks = () => {
 
     try {
       // const response = await saveBook(bookToSave, token);
+      console.log('123')
       const { data } = await savebook_mut({
         variables: {
           id: Auth.getProfile().data._id,
-          input: bookToSave
+          input: { ...bookToSave }
         }
       })
 
