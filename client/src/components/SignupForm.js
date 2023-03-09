@@ -31,13 +31,13 @@ const SignupForm = () => {
     }
     console.log(userFormData)
     try {
-      console.log('123')
+      // console.log('123')
       const { data } = await addUser({
         variables: {
           ...userFormData
         },
       });
-      console.log("123")
+      // console.log("123")
       // const response = await createUser(userFormData);
 
       // if (!response.ok) {

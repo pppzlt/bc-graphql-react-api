@@ -37,13 +37,9 @@ const resolvers = {
           { $addToSet: { savedBooks: input } },
           { new: true }
         );
-      } catch {
-        (err) => {
-          console.log(err);
-        }
+      } catch (err) {
+        console.log(err);
       }
-
-
     },
     removeBook: async (_, { id, bookId }) => {
       return User.findOneAndUpdate(
