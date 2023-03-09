@@ -31,11 +31,19 @@ const resolvers = {
       return { token, user };
     },
     saveBook: async (_, { id, input }) => {
-      return User.findOneAndUpdate(
-        { _id: id },
-        { $addToSet: { savedBooks: input } },
-        { new: true }
-      );
+      try {
+        return User.findOneAndUpdate(
+          { _id: id },
+          { $addToSet: { savedBooks: input } },
+          { new: true }
+        );
+      } catch {
+        (err) => {
+          console.log(err);
+        }
+      }
+
+
     },
     removeBook: async (_, { id, bookId }) => {
       return User.findOneAndUpdate(

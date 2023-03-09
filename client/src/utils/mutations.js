@@ -34,10 +34,10 @@ export const SAVE_BOOK = gql`
 `;
 
 export const REMOVE_BOOK = gql`
-  mutation Mutation($bookId: String) {
-    removeBook(bookId: $bookId) {
-      username
+  mutation RemoveBook($bookId: String, $removeBookId: ID!) {
+    removeBook(bookId: $bookId, id: $removeBookId) {
       _id
+      username
     }
   }
 `;
