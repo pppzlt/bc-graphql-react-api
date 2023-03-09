@@ -113,8 +113,6 @@ const SignupForm = () => {
           Submit
         </Button>
       </Form>
-      <div>{ error? `111`:`222`}</div>
-      <div>{ loading ? `aaa` : `bbb`}</div>
     </>
   );
 };
