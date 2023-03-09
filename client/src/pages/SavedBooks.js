@@ -42,6 +42,7 @@ const SavedBooks = () => {
     variables: {
       username: Auth.getProfile().data.username,
     },
+    pollInterval: 500,
   });
   let userData = data?.me || {};
 
